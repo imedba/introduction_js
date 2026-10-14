@@ -1,17 +1,47 @@
-let moi = {
-    prenom : "imed",
-    nom : "ben amor",
-    age : 56,
-    ville : "paris",
-    married : false
+// Declare the counter
+// ETAPE 2 : On déclare une variable dans le js nommé count qui est egal à 0
+// C'est cette variable qu'on va incrémenter à chaque clique du bouton +
+let count = 0;
+
+// Function pour modifier la valeur de count dans le DOM
+function updateCount() {
+    // ETAPE 5 : On modifie la valeur de count DANS LE DOM CETTE FOIS CI
+  document.getElementById("count").innerHTML = count;
 }
 
-function salutation(le_prenom) {
-    console.log("Bonjour "+le_prenom+", comment allez-vous ?");
+// Function to increase the counter
+// ETAPE 4 : La fonction increaseCount() incrémente le compteur count,
+// count change de valeur mais que dans le js pour l'instant
+// Puis il met à jour le DOM via updateCount() pour que l'utilisateur 
+// voit la valeur de count changer en temps réel
+function increaseCount() {
+  count++;
+  console.log(count);
+  updateCount(); // change la valeur de count dans le DOM
 }
 
-salutation("Imed");
-salutation("Yvan");
-salutation("Romain");
+// Function to decrease the counter
+function decreaseCount() {
+  count--;
+  updateCount();
+}
 
-salutation(moi.prenom);
+// Function to reset the counter
+function resetCount() {
+  count = 0;
+  updateCount();
+}
+
+// Function to save the counter
+function saveCount() {
+  localStorage.setItem("count", count);
+}
+
+// Function to load the counter
+function loadCount() {
+  let saved = localStorage.getItem("count");
+  if (saved !== null) {
+    count = Number(saved);
+  }
+  updateCount();
+}
