@@ -1,11 +1,17 @@
-let prenom = "imed";
+let moi = {
+    prenom : "imed",
+    nom : "ben amor",
+    age : 56,
+    ville : "paris",
+    married : false
+}
 
-console.log(prenom);
+function salutation(le_prenom) {
+    console.log("Bonjour "+le_prenom+", comment allez-vous ?");
+}
 
-let age = 33;
+salutation("Imed");
+salutation("Yvan");
+salutation("Romain");
 
-console.log(age);
-
-let prix = 49.99;
-
-console.log(prix);
+salutation(moi.prenom);
