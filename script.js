@@ -19,29 +19,3 @@ function increaseCount() {
   console.log(count);
   updateCount(); // change la valeur de count dans le DOM
 }
-
-// Function to decrease the counter
-function decreaseCount() {
-  count--;
-  updateCount();
-}
-
-// Function to reset the counter
-function resetCount() {
-  count = 0;
-  updateCount();
-}
-
-// Function to save the counter
-function saveCount() {
-  localStorage.setItem("count", count);
-}
-
-// Function to load the counter
-function loadCount() {
-  let saved = localStorage.getItem("count");
-  if (saved !== null) {
-    count = Number(saved);
-  }
-  updateCount();
-}
